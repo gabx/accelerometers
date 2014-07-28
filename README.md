@@ -11,7 +11,7 @@ The *codeBook.pdf* has been writen using [Knitr](http://yihui.name/knitr/).
 
 ## HOW-TO
 
-Download to your working directory the `run_analysis.R` script. Then fire ***R***
+Download to your working directory the `run_analysis.R` script. Then fire **R**
 and run the script.
 ```
 R> source(run_analysis.R)
