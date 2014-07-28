@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 
 # Welcome to Accelerometer project!
 
@@ -64,11 +63,3 @@ code is stored here. The scripts will be exectuded sequentially when running
 
 
 
-
-
-=======
-accelerometers
-==============
-
-a coursera tidy data assigment
->>>>>>> 7b869fc2f1ea93469e34c8d5fc31fd27e74e320a
