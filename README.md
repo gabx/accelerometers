@@ -23,12 +23,11 @@ Please find below more info and how to load & deploy the project.
 
 
 ## HOW-TO
+
+Download to your working directory the `run_analysis.R` script. The fire ***R***
+and run the script.
 ```
-$ git clone https://github.com/gabx/r-project
-$ R
-R> setwd(path/to/TidyData)
-R> library('ProjectTemplate')
-R> load.project()
+R> run_analysis.R
 ```
 
 ## A quick note about ProjectTemplate

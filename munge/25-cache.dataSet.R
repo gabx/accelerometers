@@ -1,7 +1,5 @@
 # cache results
 
-setwd('../..')
-
 cat('\nCaching data sets')
 
 # caching results
