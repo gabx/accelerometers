@@ -2,7 +2,7 @@
 # first part of our TidyData process : get the RAW data
 
 
-cat('\nDownloading, unzipping project and data.Please wait')
+cat('\nDownloading, unzipping project and data files .Please wait')
 
 # read the url file as a table
 url <- read.table('DataSet.url')
