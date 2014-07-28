@@ -42,7 +42,7 @@ R> setwd(path/to/MyProject)
 --- write some code --- 
 R> load.project()
 ```
-This above commands will create the whole directory structure for your project.
+These above commands will create the whole directory structure for your project.
 
 Most important folders:
 
