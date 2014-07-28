@@ -7,11 +7,6 @@ cat('\nDownloading, unzipping project and data.Please wait')
 # read the url file as a table
 url <- data.table('DataSet.url')
 
-# download project from github
-download.file(url[,2], destfile = 'master.zip', quiet = T, method = 'curl')              
-unzip('master.zip')
-
-
 # download data set
 download.file(url[,1], destfile = './data/DataSet.zip', quiet = T, method='curl')              
 unzip('./data/DataSet.zip', exdir = './data')
