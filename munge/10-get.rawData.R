@@ -8,7 +8,7 @@ cat('\nDownloading, unzipping project and data files .Please wait')
 url <- read.table('DataSet.url')
 
 # download data set
-download.file(url[,1], destfile = 'data/DataSet.zip', quiet = T, method='curl')              
+download.file(url[1,], destfile = 'data/DataSet.zip', quiet = T, method='curl')              
 unzip('data/DataSet.zip')
 
 # do some cleaning
