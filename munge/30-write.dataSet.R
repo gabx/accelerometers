@@ -17,7 +17,7 @@ cat('\nWriting mow the codebook pdf')
 knit2pdf('munge/codebook.Rnw','doc/codebook.tex')
 
 cat('\nPlease find codebook.pdf in the doc directory.\
-Everything is done. Exiting the project !')
+All work has been done. Bye !')
 
 
 
