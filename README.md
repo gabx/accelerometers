@@ -36,8 +36,10 @@ analysis projects. The package will automate parts of your data analysis project
 ```
 $ mkdir MyProject
 $ R
-R> setwd(path/to/MyProject)
 R> library('ProjectTemplate')
+R> create.project('MyProject')
+R> setwd(path/to/MyProject)
+--- write some code --- 
 R> load.project()
 ```
 This above commands will create the whole directory structure for your project.
