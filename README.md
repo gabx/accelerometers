@@ -9,19 +9,6 @@ This whole project has been built using [ProjectTemplate](http://projecttemplate
 
 The *codeBook.pdf* has been writed using [Knitr](http://yihui.name/knitr/).
 
-
-## The Accelerometer project
-The goal is to prepare tidy data that can be used for later analysis. You will 
-find:
-
-* two tidy data sets as *.csv* files in the **data** directory
-* one code book *codeBook.pdf* in the **doc** directory. It describes the variables, 
-the data and any work done to perform the data cleaning process. 
-* one `run_analysis.R` in the *src* directory
-
-Please find below more info and how to load & deploy the project.
-
-
 ## HOW-TO
 
 Download to your working directory the `run_analysis.R` script. Then fire ***R***
@@ -29,6 +16,11 @@ and run the script.
 ```
 R> source(run_analysis.R)
 ```
+Once you arn this script, you will find:
+
+* two tidy data sets as *.csv* files in the **data** directory
+* one code book *codeBook.pdf* in the **doc** directory. It describes the variables, 
+the data and any work done to perform the data cleaning process. 
 
 ## A quick note about ProjectTemplate
 [ProjectTemplate](http://projecttemplate.net)
