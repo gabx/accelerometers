@@ -79,3 +79,5 @@ my.result2 <- dcast(my.df, Activity + Subject.ID ~ variable, mean)
 
 
 cat('\nTidy Data are now set')
+
+setwd('../..')
