@@ -16,4 +16,4 @@ file.remove('data/DataSet.zip')
 file.remove('master.zip')
 
 if (file.exists('data/UCI HAR Dataset/'))
-{cat("Downloading and unzipping has completed succesfuly")}
+{cat("\nDownloading and unzipping has completed succesfuly")}
