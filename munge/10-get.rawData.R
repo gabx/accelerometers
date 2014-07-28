@@ -8,19 +8,17 @@ cat('\nDownloading, unzipping project and data.Please wait')
 url <- data.table('DataSet.url')
 
 # download project from github
-download.file(url[,2], destfile = 'master.zip', quiet = T, method = 'curl')
-              
+download.file(url[,2], destfile = 'master.zip', quiet = T, method = 'curl')              
 unzip('master.zip')
-file.remove('master.zip')
+
 
 # download data set
-download.file(url[,1], destfile = './data/DataSet.zip', 
-              quiet = T, method='curl')
+download.file(url[,1], destfile = './data/DataSet.zip', quiet = T, method='curl')              
 unzip('./data/DataSet.zip', exdir = './data')
 
 # do some cleaning
 file.remove('./data/DataSet.zip')
-
+file.remove('master.zip')
 
 if (file.exists('./data/UCI HAR Dataset/'))
 {cat("Downloading and unzipping has completed succesfuly")}
