@@ -12,7 +12,7 @@ in the Data directory')
         
     
 # write codebook
-cat('\nWriting the codebook pdf')
+cat('\nWriting mow the codebook pdf')
 
 knit2pdf('munge/codebook.Rnw','doc/codebook.tex')
 
