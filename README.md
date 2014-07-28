@@ -16,7 +16,7 @@ and run the script.
 ```
 R> source(run_analysis.R)
 ```
-Once you arn this script, you will find:
+Once you have ran this script, you will find:
 
 * two tidy data sets as *.csv* files in the **data** directory
 * one code book *codeBook.pdf* in the **doc** directory. It describes the variables, 
