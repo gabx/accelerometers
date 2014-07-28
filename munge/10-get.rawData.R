@@ -12,7 +12,7 @@ file.remove('master.zip')
 
 # download data set
 download.file(readLines('./DataSet.url'), destfile = './data/DataSet.zip', 
-              method='curl')
+              quite = T, method='curl')
 unzip('./data/DataSet.zip', exdir = './data')
 file.remove('./data/DataSet.zip')
 
