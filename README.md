@@ -24,7 +24,7 @@ Please find below more info and how to load & deploy the project.
 
 ## HOW-TO
 
-Download to your working directory the `run_analysis.R` script. The fire ***R***
+Download to your working directory the `run_analysis.R` script. Then fire ***R***
 and run the script.
 ```
 R> run_analysis.R
