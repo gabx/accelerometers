@@ -9,11 +9,11 @@ url <- read.table('DataSet.url')
 
 # download data set
 download.file(url[,1], destfile = 'data/DataSet.zip', quiet = T, method='curl')              
-unzip('data/DataSet.zip', exdir = 'data')
+unzip('data/DataSet.zip')
 
 # do some cleaning
 file.remove('data/DataSet.zip')
-file.remove('master.zip')
+
 
 if (file.exists('data/UCI HAR Dataset/'))
 {cat("\nDownloading and unzipping has completed succesfuly")}
