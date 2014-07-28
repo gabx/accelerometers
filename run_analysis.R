@@ -11,5 +11,5 @@ setwd('accelerometers-master')
 
 # start deploy the project using DataTemplate package
 library('ProjectTemplate')
-load.project()
+suppressMessages(load.project())
 
