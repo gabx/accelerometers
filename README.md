@@ -27,7 +27,7 @@ Please find below more info and how to load & deploy the project.
 Download to your working directory the `run_analysis.R` script. Then fire ***R***
 and run the script.
 ```
-R> run_analysis.R
+R> source(run_analysis.R)
 ```
 
 ## A quick note about ProjectTemplate
