@@ -14,7 +14,7 @@ in the Data directory')
 # write codebook
 cat('\nWriting mow the codebook pdf')
 
-knit2pdf('munge/codebook.Rnw','doc/codebook.tex')
+knit2pdf('munge/codebook-knitr.Rnw','doc/codebook.tex')
 
 cat('\nPlease find codebook.pdf in the doc directory.\
 All work has been done. Bye !')
