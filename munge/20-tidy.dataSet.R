@@ -3,7 +3,7 @@
 require('data.table')
 require('reshape2')
 
-cat('\nTyding raw data. Please wait')
+cat('\nTyding raw data. Please wait\n\n')
 
 # gather all files in one place and do some clean up
 setwd('data/UCI HAR Dataset')
@@ -78,6 +78,6 @@ my.df <- melt(my.data.set, id = c('Activity', 'Subject.ID'))
 my.result2 <- dcast(my.df, Activity + Subject.ID ~ variable, mean)
 
 
-cat('\nTidy Data are now set')
+cat('\nTidy Data are now set\n\n')
 
 setwd('../..')

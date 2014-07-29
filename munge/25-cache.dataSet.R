@@ -1,6 +1,6 @@
 # cache results
 
-cat('\nCaching data sets')
+cat('\nCaching data sets\n\n')
 
 # caching results
 cache('x.training.dt')
