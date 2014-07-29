@@ -14,8 +14,8 @@ in the Data directory\n
     
 knit2pdf('munge/codebook-knitr.Rnw','doc/codebook.tex')
 
-cat('\nPlease find codebook.pdf in the doc directory.\
-All work has been done. Bye !')
+cat('\nPlease find codebook.pdf in the doc directory.\n\n\')
+
 
 
 
