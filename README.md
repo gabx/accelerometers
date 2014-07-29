@@ -7,7 +7,7 @@ assignment.
 This whole project has been built using [ProjectTemplate](http://projecttemplate.net)
  and [Rstudio](http://www.rstudio.com/). 
 
-The *codeBook.pdf* has been writen using [Knitr](http://yihui.name/knitr/).
+The *codebook.pdf* has been writen using [Knitr](http://yihui.name/knitr/).
 
 ## HOW-TO
 
