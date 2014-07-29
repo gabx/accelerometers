@@ -134,6 +134,7 @@ stretch = 10]{microtype}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{document}
+\SweaveOpts{concordance=TRUE}
 
 <<include=FALSE>>=
 library(knitr)
@@ -168,14 +169,13 @@ age bracket of 19-48 years. Each person performed six activities:
 \item LAYING
 \end{itemize}
 
-They all were wearing a smartphone Samsung Galaxy S II on the waist.\\
+They all were wearing a smartphone Samsung Galaxy S II on the waist.
 
-Using its embedded accelerometer and gyroscope, we captured 3-axial 
-linear acceleration and 3-axial angular velocity at a constant rate of 50Hz. 
-The experiments have been video-recorded to label the data manually. The 
-obtained dataset has been randomly partitioned into two sets, where 70\% 
-of the volunteers was selected for generating the training data and 30\%
-the test data. \\
+Using its embedded accelerometer and gyroscope, we captured 3-axial linear 
+acceleration and 3-axial angular velocity at a constant rate of 50Hz. The experiments
+have been video-recorded to label the data manually. The obtained dataset 
+has been randomly partitioned into two sets, where 70\% of the volunteers
+was selected for generating the training data and 30\% the test data. 
 
 
 \subsection{Test records}
@@ -191,19 +191,21 @@ the estimated body acceleration.
 \subsection{Test features}
 \begin{itemize}
 
-\itarrow The features selected for this database come from the accelerometer and gyroscope 
-3-axial raw signals \textbf{tAcc-XYZ} and \textbf{tGyro-XYZ}.Then they were filtered 
-using a median filter and a 3rd order low pass Butterworth filter with a corner
-frequency of 20 Hz to remove noise.
+\itarrow The features selected for this database come from the accelerometer and 
+gyroscope 3-axial raw signals \textbf{tAcc-XYZ} and \textbf{tGyro-XYZ}.Then they 
+were filtered using a median filter and a 3rd order low pass Butterworth filter 
+with a corner frequency of 20 Hz to remove noise.
 
 Similarly, the acceleration signal was then separated into body and gravity 
 acceleration signals (\textbf{tBodyAcc-XYZ} and \textbf{tGravityAcc-XYZ}).
 
-Subsequently, the body linear acceleration and angular velocity were derived in
-time to obtain Jerk signals (\textbf{tBodyAccJerk-XYZ} and \textbf{tBodyGyroJerk-XYZ}).
+Subsequently, the body linear acceleration and angular velocity were 
+derived in time to obtain Jerk signals 
+(\textbf{tBodyAccJerk-XYZ} and \textbf{tBodyGyroJerk-XYZ}).
 
-\itarrow 
-The set of variables that were estimated from these signals are: 
+
+
+\itarrow The set of variables that were estimated from these signals are: 
 
 mean(): Mean value
 
