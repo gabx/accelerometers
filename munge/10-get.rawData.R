@@ -15,7 +15,9 @@ unzip('data/DataSet.zip', exdir = 'data')
 file.remove('data/DataSet.zip')
 
 
-if (file.exists('data/UCI HAR Dataset/'))
-        {cat("\nDownloading and unzipping has completed succesfuly")}
-    else
-        stop("\nDownloading has failed. Stop")
+if (file.exists('data/UCI HAR Dataset/')) {
+    cat("\nDownloading and unzipping has completed succesfuly")
+} else {
+    stop("\nDownloading has failed. Stop")
+}
+    
