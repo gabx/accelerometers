@@ -9,6 +9,7 @@ This whole project has been built using [ProjectTemplate](http://projecttemplate
 
 The *codebook.pdf* has been writen using [Knitr](http://yihui.name/knitr/).
 
+
 ## HOW-TO
 
 Download to your working directory the `run_analysis.R` script. Then fire **R**
@@ -26,6 +27,14 @@ Inside the above mentioned directory:
 * one code book *codeBook.pdf* in the **doc** directory. It describes the variables, 
 the data and any work done to perform the data cleaning process. 
 
+
+## PROOF OF CONCEPT 
+**second way to master the project** 
+
+Another way to get the proejct done is to [Download](https://drive.google.com/file/d/0BzNXwOua274uMUkwbnotOTRoWTg/edit?usp=sharing)
+this *pdf* and follow instruction.
+
+
 ## A quick note about ProjectTemplate
 [ProjectTemplate](http://projecttemplate.net)
 is an R package that helps you organize your statistical
@@ -35,6 +44,7 @@ analysis projects. The package will automate parts of your data analysis project
 * Loading all the R packages you’ll use.
 * Loading all of your data sets into memory.
 * Munging and preprocessing your data into a form that’s suitable for analysis.
+
 
 ### How it works
 ```
@@ -55,6 +65,7 @@ Most important folders:
 code is stored here. The scripts will be exectuded sequentially when running 
 `load.project()`. Best is then to name it with digits first.
 * ***src*** : here is stored the final analysis script.
+
 
 
 
