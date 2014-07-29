@@ -4,10 +4,17 @@
 This project is part of coursera "Getting and Cleaning Data". This is a peer
 assignment.
 
-This whole project has been built using [ProjectTemplate](http://projecttemplate.net)
- and [Rstudio](http://www.rstudio.com/). 
+All analyses were performed using:
 
-The *codebook.pdf* has been writen using [Knitr](http://yihui.name/knitr/).
+* R version 3.1.0
+
+* [ProjectTemplate](http://projecttemplate.net) version 0.5-1
+
+* [Knitr](http://yihui.name/knitr/) version 1.6 
+
+* [Reshape2](http://cran.r-project.org/web/packages/reshape2/index.html) version 1.4 
+
+* [data.table](http://cran.r-project.org/web/packages/data.table/index.html) version 1.9.2
 
 
 ## HOW-TO
