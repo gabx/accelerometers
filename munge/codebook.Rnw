@@ -45,7 +45,10 @@
 \begin{description}
 \item [Version:] 1.0
 \item [Author:]Arnaud Gaboury 
-\end{description}}
+\item [Github:]\MyHref{mydarkgreen}\href{https://github.com/gabx/accelerometers}
+{Accelerometer project}
+\end{description}
+}
 
 \endgroup}
 
@@ -90,7 +93,33 @@
   \plitemsep=1pt
   \plparsep=1pt
   
-  %%%% GENERAL PRESENTATION %%%%
+ % customized item 
+\newcommand{\itbox}{\item[\ding{114}]}
+\newcommand{\itstar}{\item[\ding{79}]}
+\newcommand{\itarrow}{\item[\ding{227}]}
+\newcommand{\co}[1]{\texttt{\colorbox{mylightgrey}{#1}}}
+%\newcommand{smallcode}{lstlisting}[style=]}}
+%shortcuts%
+\def \arrow {\ding{227}} %arrow
+\def \empty {}
+\def \tt {TTH}
+
+%commands%
+\newcommand{\Rlogo}{\protect\includegraphics[height=2ex,keepaspectratio]{Rlogo.pdf}}
+
+\newcommand{\julia}{\protect\includegraphics[height=2.5ex,keepaspectratio]{julia3.pdf}}
+
+\newcommand{\knitr}{\protect\includegraphics[height=2.2ex,keepaspectratio]{knitr2.pdf}}
+
+\newcommand{\project} {\emph{TheTradingHall.com}}
+\newcommand{\proj} {\emph{TTH}}
+\newcommand{\siecle}[1]{\textsc{#1}\ieme}
+\newcommand{\HRule}{\rule{\linewidth}{1mm}}
+\newcommand{\cc}{\texttt}
+\newcommand{\MyHref}[1]{\hypersetup{urlcolor=#1}} 
+\newcommand{\mycode}[1]{\textsf{\textbf{#1}}}
+  
+%%%% GENERAL PRESENTATION %%%%
 
 \linespread{1.1}
 \usepackage[    % Improves general appearance
@@ -105,6 +134,7 @@ stretch = 10]{microtype}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{document}
+\SweaveOpts{concordance=TRUE}
 
 
 
@@ -130,9 +160,8 @@ age bracket of 19-48 years. Each person performed six activities:
 \item STANDING
 \item LAYING
 \end{itemize}
+
 They all were wearing a smartphone Samsung Galaxy S II on the waist.\\
-
-
 
 Using its embedded accelerometer and gyroscope, we captured 3-axial 
 linear acceleration and 3-axial angular velocity at a constant rate of 50Hz. 
@@ -142,10 +171,73 @@ of the volunteers was selected for generating the training data and 30\%
 the test data. \\
 
 
-\subsection{Test record}
+\subsection{Test records}
+\begin{itemize}
+\item Triaxial acceleration from the accelerometer (total acceleration) and 
+the estimated body acceleration.
+\item Triaxial Angular velocity from the gyroscope. 
+\item A 561-feature vector with time and frequency domain variables. 
+\item Its activity label. 
+\item An identifier of the subject who carried out the experiment.
+\end{itemize}
 
+\subsection{Test features}
+\begin{itemize}
+
+\itarrow The features selected for this database come from the accelerometer and gyroscope 
+3-axial raw signals \textbf{tAcc-XYZ} and \textbf{tGyro-XYZ}.Then they were filtered 
+using a median filter and a 3rd order low pass Butterworth filter with a corner
+frequency of 20 Hz to remove noise.
+
+Similarly, the acceleration signal was then separated into body and gravity 
+acceleration signals (\textbf{tBodyAcc-XYZ} and \textbf{tGravityAcc-XYZ}).
+
+Subsequently, the body linear acceleration and angular velocity were derived in
+time to obtain Jerk signals (\textbf{tBodyAccJerk-XYZ} and \textbf{tBodyGyroJerk-XYZ}).
+
+\itarrow 
+The set of variables that were estimated from these signals are: 
+
+mean(): Mean value
+
+std(): Standard deviation
+
+mad(): Median absolute deviation 
+
+max(): Largest value in array
+
+min(): Smallest value in array
+
+sma(): Signal magnitude area
+
+energy(): Energy measure. Sum of the squares divided by the number of values. 
+
+iqr(): Interquartile range 
+
+entropy(): Signal entropy
+
+arCoeff(): Autorregresion coefficients with Burg order equal to 4
+
+correlation(): correlation coefficient between two signals
+
+maxInds(): index of the frequency component with largest magnitude
+
+meanFreq(): Weighted average of the frequency components to obtain a 
+mean frequency
+
+skewness(): skewness of the frequency domain signal 
+
+kurtosis(): kurtosis of the frequency domain signal 
+
+bandsEnergy(): Energy of a frequency interval within the 64 bins of the FFT of 
+each window.
+
+angle(): Angle between to vectors.
+\end{itemize}
 
 \section{\texorpdfstring{\color{mydarkgreen}{Coding guidelines}}{}}
+
+
 \section{\texorpdfstring{\color{mydarkgreen}{Major Topic Codes}}{}}
 
 
