@@ -31,7 +31,7 @@ the data and any work done to perform the data cleaning process.
 ## PROOF OF CONCEPT 
 **second way to master the project** 
 
-Another way to get the proejct done is to [Download](https://drive.google.com/file/d/0BzNXwOua274uMTJlYUdNbFA0R3c/edit?usp=sharing)
+Another way to get the proejct done is to [Download](https://drive.google.com/file/d/0BzNXwOua274ueHFveUZma2NHNTA/edit?usp=sharing)
 this *pdf* and follow instruction.
 
 
