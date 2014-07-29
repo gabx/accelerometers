@@ -18,6 +18,10 @@ R> source(run_analysis.R)
 ```
 Once you have ran this script, you will find:
 
+* one **accelerometers-master** folder. Open it. Everything needed is inside.
+
+Inside the above mentioned directory:
+
 * two tidy data sets as *.csv* files in the **data** directory
 * one code book *codeBook.pdf* in the **doc** directory. It describes the variables, 
 the data and any work done to perform the data cleaning process. 
