@@ -45,8 +45,10 @@
 \begin{description}
 \item [Version:] 1.0
 \item [Author:]Arnaud Gaboury 
-\item [Github:]\MyHref{mydarkgreen}\href{https://github.com/gabx/accelerometers}
+\item [Github:]\MyHref{myblue}\href{https://github.com/gabx/accelerometers}
 {Accelerometer project}
+\item [Note:]\MyHref{myblue}\href{https://google.com}
+{ !! blue parts hide hyperlink !!}
 \end{description}
 }
 
@@ -142,8 +144,6 @@ opts_chunk$set(
 concordance=TRUE
 )
 @
-
-
 
 
 \titleGP
@@ -244,7 +244,57 @@ each window.
 angle(): Angle between to vectors.
 \end{itemize}
 
-\section{\texorpdfstring{\color{mydarkgreen}{Coding guidelines}}{}}
+\section{\texorpdfstring{\color{mydarkgreen}{Coding guideline}}{}}
+The whole script has been split in five scripts for practicale reasons. Each one
+is processed in sequencial order and dedicated to one specific task.
+\begin{itemize}
+
+%%%
+\itbox Downloading the data set from \MyHref{myblue}\href{
+https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20
+Dataset.zip}{Coursera cloudfront}.
+
+Code is in \MyHref{myblue}
+\href{https://github.com/gabx/accelerometers/blob/master/munge/10-get.rawData.R}
+{\mycode{10-get.rawData.R}} script.
+%%%
+\itbox Reading, aranging and cleaning the data set. This is where most of the
+code has been writen.
+
+Code is in \MyHref{myblue}
+\href{https://github.com/gabx/accelerometers/blob/master/munge/20-tidy.dataSet.R}
+{\mycode{20-tidy.dataSet.R}} script.
+%%%
+\itbox Caching the result for further use
+
+Code is in \MyHref{myblue}
+\href{https://github.com/gabx/accelerometers/blob/master/munge/25-cache.dataSet.R}
+{\mycode{25-cache.dataSet.R}} script.
+%%%
+\itbox Writing the tidy data set in \textit{.csv} files and this \textit{codeBook.pdf}.
+The current document use all \MyHref{myblue}\href{http://latex-project.org/intro.html}
+{\LaTeX} high quality text processor facilities.
+
+Code is in \MyHref{myblue}
+\href{https://github.com/gabx/accelerometers/blob/master/munge/30-write.dataSet.R}
+{\mycode{30-write.dataSet.R}} script.
+%%%
+\itbox Writing the tidy data set in \textit{.csv} files.
+
+Code is in \MyHref{myblue}
+\href{https://github.com/gabx/accelerometers/blob/master/munge/30-write.dataSet.R}
+{\mycode{30-write.dataSet.R}} script.
+%%%
+\itbox Cleaning directories from unneeded files and folders
+Code is in \MyHref{myblue}
+\href{https://github.com/gabx/accelerometers/blob/master/munge/35-clean.dir.R}
+{\mycode{35-clean.dir.R}} script.
+
+Code is in \MyHref{myblue}
+\href{https://github.com/gabx/accelerometers/blob/master/munge/30-write.dataSet.R}
+{\mycode{30-write.dataSet.R}} script.
+
+\end{itemize}
 
 
 \section{\texorpdfstring{\color{mydarkgreen}{Major Topic Codes}}{}}
