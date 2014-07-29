@@ -16,6 +16,8 @@ All analyses were performed using:
 
 * [data.table](http://cran.r-project.org/web/packages/data.table/index.html) version 1.9.2
 
+* Platform : [Archlinux x86_64](https://www.archlinux.org/)
+
 
 ## HOW-TO
 
