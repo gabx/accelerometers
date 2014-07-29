@@ -40,7 +40,7 @@ the data and any work done to perform the data cleaning process.
 ## PROOF OF CONCEPT 
 **second way to master the project** 
 
-Another way to get the proejct done is to [Open](https://drive.google.com/file/d/0BzNXwOua274uMTFyd1d4cGdQc3M/edit?usp=sharing)
+Another way to get the proejct done is to [open](https://drive.google.com/file/d/0BzNXwOua274uMTFyd1d4cGdQc3M/edit?usp=sharing)
 this *pdf* and follow instruction.
 
 
