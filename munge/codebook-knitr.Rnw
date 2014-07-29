@@ -136,7 +136,7 @@ stretch = 10]{microtype}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{document}
-\SweaveOpts{concordance=TRUE}
+
 
 <<include=FALSE>>=
 library(knitr)
