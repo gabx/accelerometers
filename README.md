@@ -22,6 +22,15 @@ On machine:
 
 * Platform : [Archlinux x86_64](https://www.archlinux.org/)
 
+CPU op-mode(s):        32-bit, 64-bit
+Byte Order:            Little Endian
+CPU(s):                8
+Thread(s) per core:    2
+Vendor ID:             GenuineIntel
+Model name:            Intel(R) Core(TM) i7-2600K CPU @ 3.40GHz
+
+
+
 
 ## HOW-TO
 
