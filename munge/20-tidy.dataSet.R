@@ -36,16 +36,16 @@ if (! file.exists('../../cache/x.test.dt.RData')){
 }
 
 if (! file.exists('../../cache/y.test.dt.RData')){
-y.test.dt <- read.table('y_test1.txt', header = F, sep = "",
+    y.test.dt <- read.table('y_test1.txt', header = F, sep = "",
                                  dec = '.',col.names = "Activity ID")
 }
 ##subject
 if (! file.exists('../../cache/training.dt.RData')){
-training.subject.dt <- read.table('subject_train.txt', header = F, sep = "", 
+    training.subject.dt <- read.table('subject_train.txt', header = F, sep = "", 
                                   dec = '.', col.names = "Subject ID")
 }
 if (! file.exists('../../cache/test.subject.dt.RData')){
-test.subject.dt <- read.table('subject_test.txt', header = F, sep = "", dec = '.', 
+    test.subject.dt <- read.table('subject_test.txt', header = F, sep = "", dec = '.', 
                               col.names = "Subject ID")
 }
                          
@@ -56,7 +56,9 @@ subject <- rbind(training.subject.dt,test.subject.dt)
 
 
 # read features
-features.dt <- read.table("features.txt", header=F, sep = "", dec = '.')
+if (! file.exists('../../cache/features.dt.RData')){
+    features.dt <- read.table("features.txt", header=F, sep = "", dec = '.')
+}
                          
 # set column names 
 colnames(x) <- features.dt[[2]]
@@ -69,9 +71,11 @@ my.std <- grep('std\\(\\)', features.dt[[2]], value=TRUE)
 my.select.features <- x[,c(my.mean, my.std)]
 
 # 3-Use descriptive activity names to name the activities in the data set
+if (! file.exists('../../cache/activity.dt.RData')){
 activity.dt <- read.table("activity_labels.txt", colClasses= 'character',
                           header = F, sep = "", dec = '.',
                           col.names = c('Activity ID','Activity'))
+}
 
 # 4-Appropriately labels the data set with descriptive variable names
 my.activity <- merge(y,activity.dt)
