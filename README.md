@@ -16,6 +16,10 @@ All analyses were performed using:
 
 * [data.table](http://cran.r-project.org/web/packages/data.table/index.html) version 1.9.2
 
+* [RCurl](http://cran.r-project.org/web/packages/RCurl/index.html) version 1.95-4.1
+
+On machine:
+
 * Platform : [Archlinux x86_64](https://www.archlinux.org/)
 
 
