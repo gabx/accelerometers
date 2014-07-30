@@ -8,14 +8,14 @@ cat('\nDownloading, unzipping project and data files. Please wait\n\n')
 url <- read.table('DataSet.url')
 
 # download data set if not downloaded
-if (! file.exists(data/DataSet.zip)){
+if (! file.exists('./data/DataSet.zip')){
     download.file(url[1,], destfile = 'data/DataSet.zip', quiet = T, method='curl')
 }
               
 unzip('data/DataSet.zip', exdir = 'data')
 
 
-if (file.exists('data/UCI HAR Dataset/')) {
+if (file.exists('./data/UCI HAR Dataset/')) {
     cat("\nDownloading and unzipping has completed succesfuly\n\n")
 } else {
     stop("\nDownloading has failed. Stop")
