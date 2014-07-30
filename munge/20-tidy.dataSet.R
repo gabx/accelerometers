@@ -17,26 +17,37 @@ file.rename(from= c('test/subject_test.txt','test/X_test.txt','test/y_test.txt')
 unlink(c('train','test'), recursive = TRUE) 
 
 
-# read files
+# read files if not already cached
 ## training
-x.training.dt <- read.table('X_train.txt', header = F, sep = "", 
+
+if (! file.exists('../../cache/x.training.dt.RData')){
+    x.training.dt <- read.table('X_train.txt', header = F, sep = "", 
                                      dec = '.')
-y.training.dt <- read.table('y_train.txt', header = F, sep = "", 
+}
+if (! file.exists('../../cache/y.training.dt.RData')){
+    y.training.dt <- read.table('y_train.txt', header = F, sep = "", 
                             dec = '.', col.names = "Activity ID")
-                            
+}                            
 
 ##test
-x.test.dt <- read.table('X_test.txt', header = F, sep = "", 
-                        dec = '.')                             
+if (! file.exists('../../cache/x.test.dt.RData')){
+    x.test.dt <- read.table('X_test.txt', header = F, sep = "", 
+                        dec = '.')
+}
+
+if (! file.exists('../../cache/y.test.dt.RData')){
 y.test.dt <- read.table('y_test1.txt', header = F, sep = "",
                                  dec = '.',col.names = "Activity ID")
-
+}
 ##subject
+if (! file.exists('../../cache/training.dt.RData')){
 training.subject.dt <- read.table('subject_train.txt', header = F, sep = "", 
                                   dec = '.', col.names = "Subject ID")
+}
+if (! file.exists('../../cache/test.subject.dt.RData')){
 test.subject.dt <- read.table('subject_test.txt', header = F, sep = "", dec = '.', 
                               col.names = "Subject ID")
-
+}
                          
 # 1- merge train and test data files
 x <- rbind(x.training.dt,x.test.dt)
