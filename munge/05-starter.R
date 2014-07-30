@@ -5,6 +5,10 @@ Rprof("profiling/profile.out", line.profiling=TRUE, interval = 0.01 )
 # store the current working directory
 cur.dir <- getwd()
 
+# work in a new and empty environment
+save.image('cache/ini.env.RData')
+rm(list=ls())
+
 # Test if url exists
 url <- read.table('DataSet.url')
 Exist.Url <- as.data.table(url[by(url[,], seq_len(nrow(url)), url.exists),])
