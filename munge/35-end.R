@@ -7,6 +7,6 @@ file.remove('doc/codebook.aux', 'doc/codebook.log', 'doc/codebook.out',
 load(cache/init.env.RData)
 
 # back to initial directory
-setwd(cur)
+setwd(cur.dir)
 
 
