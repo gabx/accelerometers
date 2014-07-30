@@ -12,7 +12,7 @@ in the Data directory\n
 \nWriting mow the codebook pdf\n\n')
         
     
-knit2pdf('munge/codebook-knitr.Rnw','doc/codebook.tex')
+knit2pdf('munge/codebook-knitr.Rnw','doc/codebook.tex', quiet = TRUE)
 
 cat('\nPlease find codebook.pdf in the doc directory.\n\n\')
 
