@@ -41,13 +41,6 @@ Inside the above mentioned directory:
 the data and any work done to perform the data cleaning process. 
 
 
-## PROOF OF CONCEPT 
-**second way to master the project** 
-
-Another way to get the proejct done is to [open](https://drive.google.com/file/d/0BzNXwOua274uMTFyd1d4cGdQc3M/edit?usp=sharing)
-this *pdf* and follow instruction.
-
-
 ## A quick note about ProjectTemplate
 [ProjectTemplate](http://projecttemplate.net)
 is an R package that helps you organize your statistical
