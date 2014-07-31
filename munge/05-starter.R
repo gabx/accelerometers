@@ -26,15 +26,15 @@ if (file.exists('cache/all.dataSet.RData')){
 
 # Test if url exists
 Url <- read.table('DataSet.url')
-Exist.Url <- as.data.table(url[by(url[,], seq_len(nrow(url)), url.exists),])
-True.Url <- ((dim(url) == dim(Exist.Url)))
-Non.Exist.Url <- url[True.Url,]
+Exist.Url <- as.data.table(Url[by(Url[,], seq_len(nrow(Url)), url.exists),])
+True.Url <- ((dim(Url) == dim(Exist.Url)))
+Non.Exist.Url <- Url[True.Url,]
 
 
-if (all(Exist.Url %in% url) == FALSE)
+if (all(Exist.Url %in% Url) == FALSE)
     stop(paste("\nWrong URL. Please verify\n",cat(Non.Exist.Url)), call. = F)
          
-rm(c("Exist.Url",'Non.Exist.Url','True.Url')
+rm(list=c('Non.Exist.Url','True.Url'),Exist.Url,Url)
     
         
 
