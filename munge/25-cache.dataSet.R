@@ -3,11 +3,9 @@
 cat('\nCaching data sets\n\n')
 
 # caching results
-cache('x.training.dt')
-cache('y.training.dt')
-cache('x.test.dt')
-cache('y.test.dt')
-cache('training.subject.dt')
-cache('test.subject.dt')
-cache('features.dt')
-cache('activity.dt')
+lapply(my.df.list,cache)
+
+# save all data
+save(list = ls(all = TRUE), file= "cache/all.dataSet.RData")
+
+cat('\nAll data sets are cached in cache/all.dataSet.RData\n\n')
