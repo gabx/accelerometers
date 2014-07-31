@@ -3,62 +3,84 @@
 require('data.table')
 require('reshape2')
 
+
 cat('\nTyding raw data. Please wait\n\n')
 
-# gather all files in one place and do some clean up
+
 setwd('data/UCI HAR Dataset')
-file.rename(from= c('train/subject_train.txt','train/X_train.txt','train/y_train.txt'),
+
+#read features & activity
+features.dt <- read.table("features.txt", header=F, sep = "", dec = '.')
+activity.dt <- read.table("activity_labels.txt", colClasses= 'character',
+                          header = F, sep = "", dec = '.',
+                          col.names = c('Activity ID','Activity'))
+
+####################################################
+# gather all files in one place and do some cleaning
+## remove all info files
+to.rm <- list.files()[grep('.txt',list.files())]
+unlink(to.rm)
+rm(to.rm)
+## move the needed files
+file.rename(from= c('train/subject_train.txt','train/X_train.txt',
+                    'train/y_train.txt'),
             to = c('subject_train.txt','X_train.txt','y_train.txt'))
 
 file.rename(from= c('test/subject_test.txt','test/X_test.txt','test/y_test.txt'),
-            to = c('subject_test.txt','X_test.txt','y_test1.txt'))
+            to = c('subject_test.txt','X_test.txt','y_test.txt'))
 
-## clean
-unlink(c('train','test'), recursive = TRUE) 
+## remove directories
+to.rm <- basename(list.dirs(recursive = F))
+unlink(to.rm, recursive = T)
+rm(to.rm)
 
 
-# read files if not already cached
-## training
+## list the remaing files
+### with .txt as list
+my.txt.list <- as.list(list.files())
+### with no extension as list
+my.txt.list <- strsplit(unlist(my.txt.list),'.txt')
+### with df as prefix as list
+my.df <- as.list(paste(my.txt.list, '.dt',sep = ''))
+##################################################################
 
-if (! file.exists('../../cache/x.training.dt.RData')){
-    x.training.dt <- read.table('X_train.txt', header = F, sep = "", 
-                                     dec = '.')
+
+# load cached data set
+if (file.exists("../../cache/all.dataSet.RData")){
+    load("../../cache/all.dataSet.RData")
 }
-if (! file.exists('../../cache/y.training.dt.RData')){
-    y.training.dt <- read.table('y_train.txt', header = F, sep = "", 
-                            dec = '.', col.names = "Activity ID")
-}                            
 
-##test
-if (! file.exists('../../cache/x.test.dt.RData')){
-    x.test.dt <- read.table('X_test.txt', header = F, sep = "", 
-                        dec = '.')
+
+# apply read.table on all files not already cached
+
+my.rt <- function(x,...)
+{
+    # apply read.table to txt files if data table is not already cached
+    # x is a character vector
+    y <- gsub(".txt", ".dt", x, fixed = T)
+    if (y %in% ls() == FALSE){
+         rt <- read.table(x, header = F, sep = "", dec = '.') 
+    }        
 }
 
-if (! file.exists('../../cache/y.test.dt.RData')){
-    y.test.dt <- read.table('y_test1.txt', header = F, sep = "",
-                                 dec = '.',col.names = "Activity ID")
-}
-##subject
-if (! file.exists('../../cache/training.dt.RData')){
-    training.subject.dt <- read.table('subject_train.txt', header = F, sep = "", 
-                                  dec = '.', col.names = "Subject ID")
-}
-if (! file.exists('../../cache/test.subject.dt.RData')){
-    test.subject.dt <- read.table('subject_test.txt', header = F, sep = "", dec = '.', 
-                              col.names = "Subject ID")
-}
-                         
+my.res <- saaply(my.txt.list,my.rt)
+               
+
+# rename elements of my.df
+names(my.res) <- my.df
+
+# unsplit the list of data frame in global env
+list2env(my.res,globalenv())
+
+       
 # 1- merge train and test data files
-x <- rbind(x.training.dt,x.test.dt)
-y <- rbind(y.training.dt,y.test.dt)
-subject <- rbind(training.subject.dt,test.subject.dt)
+x <- rbind(X_train.dt,X_test.dt)
+y <- rbind(y_traini.dt,y_test.dt)
+subject <- rbind(subject_train.dt,subject_test.dt)
 
 
-# read features
-if (! file.exists('../../cache/features.dt.RData')){
-    features.dt <- read.table("features.txt", header=F, sep = "", dec = '.')
-}
+
+
                          
 # set column names 
 colnames(x) <- features.dt[[2]]
@@ -70,12 +92,6 @@ my.std <- grep('std\\(\\)', features.dt[[2]], value=TRUE)
 
 my.select.features <- x[,c(my.mean, my.std)]
 
-# 3-Use descriptive activity names to name the activities in the data set
-if (! file.exists('../../cache/activity.dt.RData')){
-activity.dt <- read.table("activity_labels.txt", colClasses= 'character',
-                          header = F, sep = "", dec = '.',
-                          col.names = c('Activity ID','Activity'))
-}
 
 # 4-Appropriately labels the data set with descriptive variable names
 my.activity <- merge(y,activity.dt)
@@ -93,6 +109,6 @@ my.df <- melt(my.data.set, id = c('Activity', 'Subject.ID'))
 my.result2 <- dcast(my.df, Activity + Subject.ID ~ variable, mean)
 
 
-cat('\nTidy Data are now set\n\n')
+cat('\nTidy Data sets are done\n\n')
 
 setwd('../..')
