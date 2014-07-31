@@ -10,13 +10,31 @@ All analyses were performed using:
 
 * [ProjectTemplate](http://projecttemplate.net) version 0.5-1
 
+Author
+Aleksandar Blagotic [ctb],Diego Valle-Jones [ctb],Jeffrey Breen [ctb],Joakim Lund-
+borg [ctb],John Myles White [aut, cph],Josh Bode [ctb],Kenton White [ctb],Kirill
+Mueller [ctb, cre],Matteo Redaelli [ctb],Noah Lo-
+rang [ctb],Patrick Schalk [ctb]
+
 * [Knitr](http://yihui.name/knitr/) version 1.6 
+
+Author
+Yihui Xie 
 
 * [Reshape2](http://cran.r-project.org/web/packages/reshape2/index.html) version 1.4 
 
+Author
+Hadley Wickham
+
 * [data.table](http://cran.r-project.org/web/packages/data.table/index.html) version 1.9.2
 
+Author
+M Dowle, T Short, S Lianoglou, A Srinivasan with contributions from R Saporta, E Antonyan
+
 * [RCurl](http://cran.r-project.org/web/packages/RCurl/index.html) version 1.95-4.1
+
+Author
+Duncan Temple Lang
 
 On machine:
 
