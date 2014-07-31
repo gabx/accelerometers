@@ -1,9 +1,6 @@
 # This is the master script file for the Accelerometer project
 # download it and run in R
 
-# log current directory
-cur <- getwd()
-
 
 # first clone the reposirory, unzip and cd to it
 download.file('https://codeload.github.com/gabx/accelerometers/zip/master',
