@@ -34,7 +34,7 @@ Non.Exist.Url <- Url[True.Url,]
 if (all(Exist.Url %in% Url) == FALSE)
     stop(paste("\nWrong URL. Please verify\n",cat(Non.Exist.Url)), call. = F)
          
-rm(list=c('Non.Exist.Url','True.Url'),Exist.Url,Url)
+rm(list=c('Non.Exist.Url','True.Url'),Exist.Url)
     
         
 
