@@ -39,9 +39,9 @@ rm(to.rm)
 ### with .txt as list
 my.txt.list <- as.list(list.files())
 ### with no extension as list
-my.txt.list <- strsplit(unlist(my.txt.list),'.txt')
+my.list <- strsplit(unlist(my.txt.list),'.txt')
 ### with df as prefix as list
-my.df <- as.list(paste(my.txt.list, '.dt',sep = ''))
+my.df.list <- as.list(paste(my.list, '.dt',sep = ''))
 ##################################################################
 
 
@@ -63,11 +63,11 @@ my.rt <- function(x,...)
     }        
 }
 
-my.res <- saaply(my.txt.list,my.rt)
+my.res <- sapply(my.txt.list,my.rt)
                
 
 # rename elements of my.df
-names(my.res) <- my.df
+names(my.res) <- my.df.list
 
 # unsplit the list of data frame in global env
 list2env(my.res,globalenv())
@@ -75,7 +75,7 @@ list2env(my.res,globalenv())
        
 # 1- merge train and test data files
 x <- rbind(X_train.dt,X_test.dt)
-y <- rbind(y_traini.dt,y_test.dt)
+y <- rbind(y_train.dt,y_test.dt)
 subject <- rbind(subject_train.dt,subject_test.dt)
 
 
