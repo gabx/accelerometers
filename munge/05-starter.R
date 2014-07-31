@@ -20,7 +20,7 @@ save(list = ls(all = TRUE), file= "cache/init.all.RData")
 rm(list=ls())
 
 # restore cache data set if any
-if (file.exists('cache/all.dataSet.RData'){
+if (file.exists('cache/all.dataSet.RData')){
     load("cache/init.all.RData", .GlobalEnv)
 }
 
