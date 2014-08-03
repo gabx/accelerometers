@@ -2,6 +2,8 @@
 # credits : 
 # https://github.com/christophergandrud/DataCombine/blob/master/R/utils.R
 
+
+########################################################################
 #' Remove all objects from a workspace except those specified by the user.
 #'
 #' \code{rmExcept} removes all objects from a workspace except those specified
@@ -25,8 +27,9 @@
 #' ls()
 #'
 #' @export
-
-rmExcept <- function(keepers, envir = globalenv(), message = TRUE){
+###################################
+rmExcept <- function(keepers, envir = globalenv(), message = TRUE)
+    {
     if (class(keepers) != 'character'){
         stop('The keepers argument must be a character vector.', call. = FALSE)
     }
@@ -38,7 +41,7 @@ rmExcept <- function(keepers, envir = globalenv(), message = TRUE){
     }
 }
 
-
+##########################################################################
 #' Subset a data frame if a specified pattern is found in a character string
 #'
 #' @param data data frame.
@@ -61,8 +64,9 @@ rmExcept <- function(keepers, envir = globalenv(), message = TRUE){
 #' ABGermany <- grepl.sub(data = ABData, pattern = "DE", Var = "a")
 #'
 #' @export
-
-grepl.sub <- function(data, pattern, Var, keep.found = TRUE, useBytes = TRUE){
+#############################################################
+grepl.sub <- function(data, pattern, Var, keep.found = TRUE, useBytes = TRUE)
+    {
     y <- NULL
     data$y <- grepl(pattern = paste0(pattern, collapse="|"), x = data[, Var],
                     useBytes = useBytes)
@@ -71,17 +75,27 @@ grepl.sub <- function(data, pattern, Var, keep.found = TRUE, useBytes = TRUE){
     subdata
 }
 
+
+##############################################################################
 #' Replace multiple patterns found in a character string column of a data frame
 #'
-#' \code{FindReplace} allows you to find and replace multiple character string patterns in a data frame's column.
+#' \code{FindReplace} allows you to find and replace multiple character string 
+#' patterns in a data frame's column.
 #'
 #' @param data data frame with the column you would like to replace string patterns.
-#' @param Var character string naming the column you would like to replace string patterns. The column must be of class \code{character} or \code{factor}.
-#' @param replaceData a data frame with at least two columns. One contains the patterns to replace and the other contains their replacement. Note: the pattern and its replacement must be in the same row.
-#' @param from character string naming the column with the patterns you would like to replace.
+#' @param Var character string naming the column you would like to replace string 
+#' patterns. 
+#' The column must be of class \code{character} or \code{factor}.
+#' @param replaceData a data frame with at least two columns. One contains the 
+#' patterns to replace and the other contains their replacement.
+#' Note: the pattern and its replacement must be in the same row.
+#' @param from character string naming the column with the patterns you would like 
+#' to replace.
 #' @param to character string naming the column with the the pattern replacements.
-#' @param exact logical. Indicates whether to only replace exact pattern matches (\code{TRUE}) or not (\code{FALSE}).
-#' @param vector logical. If \code{TRUE} then the replacement is returned as a single vector. If \code{FALSE} then the whole data frame is returned.
+#' @param exact logical. Indicates whether to only replace exact pattern matches 
+#' (\code{TRUE}) or not (\code{FALSE}).
+#' @param vector logical. If \code{TRUE} then the replacement is returned as a
+#'  single vector. If \code{FALSE} then the whole data frame is returned.
 #'
 #' @examples
 #' # Create original data
@@ -100,8 +114,10 @@ grepl.sub <- function(data, pattern, Var, keep.found = TRUE, useBytes = TRUE){
 #'                      from = "from", to = "to", vector = TRUE)
 #'
 #' @export
-
-FindReplace <- function(data, Var, replaceData, from = 'from', to = 'to', exact = TRUE, vector = FALSE){
+#####################################################################
+FindReplace <- function(data, Var, replaceData, from = 'from', to = 'to', 
+                        exact = TRUE, vector = FALSE)
+    {
     if(!(class(data[, Var]) %in% c('character', 'factor'))){
         stop(paste(Var, 'is not a character string or factor. Please convert to a character string or factor and then rerun.'),
              call. = FALSE)
@@ -126,6 +142,7 @@ FindReplace <- function(data, Var, replaceData, from = 'from', to = 'to', exact 
     return(data)
 }
 
+################################################################################
 #' Drop one or more variables from a data frame.
 #'
 #' \code{VarDrop} drops one or more variables from a data frame.
@@ -145,8 +162,9 @@ FindReplace <- function(data, Var, replaceData, from = 'from', to = 'to', exact 
 #' DroppedData <- VarDrop(ABCData, c('b', 'c'))
 #'
 #' @export
-
-VarDrop <- function(data, Var){
+######################################################################
+VarDrop <- function(data, Var)
+    {
     if (!all(Var %in% names(data))){
         message('At least one of the specified variables to drop is not found.')
     }
@@ -154,31 +172,44 @@ VarDrop <- function(data, Var){
     return(data)
 }
 
+###################################################################
 #' Merges 2 data frames and report/drop/keeps only duplicates.
 #'
 #' \code{dMerge} merges 2 data frames and reports/drops/keeps only duplicates.
 #'
 #' @param data1 a data frame. The first data frame to merge.
 #' @param data2 a data frame. The second data frame to merge.
-#' @param Var character vector containing the names of the variables merge by. See \code{\link{merge}}.
-#' @param dropDups logical. Whether or not to drop duplicated rows based on \code{Var}. If \code{dropDups = FALSE} then it gives a count of the duplicated rows.
-#' @param dupsOut logical. If \code{TRUE} then a data frame only containing duplicated values is returned and \code{dropDups} is ignored.
-#' @param fromLast logical indicating if duplication should be considered from the reverse side. Only relevant if \code{dropDups = TRUE}.
-#' @param all logical; all = L is shorthand for all.x = L and all.y = L, where L is either TRUE or FALSE.
-#' @param all.x logical; if TRUE, then extra rows will be added to the output, one for each row in x that has no matching row in y. These rows will have NAs in those columns that are usually filled with values from y. The default is FALSE, so that only rows with data from both x and y are included in the output.
+#' @param Var character vector containing the names of the variables merge by. 
+#' See \code{\link{merge}}.
+#' @param dropDups logical. Whether or not to drop duplicated rows based on 
+#' \code{Var}. If \code{dropDups = FALSE} then it gives a count of the duplicated rows.
+#' @param dupsOut logical. If \code{TRUE} then a data frame only containing 
+#' duplicated values is returned and \code{dropDups} is ignored.
+#' @param fromLast logical indicating if duplication should be considered from 
+#' the reverse side. Only relevant if \code{dropDups = TRUE}.
+#' @param all logical; all = L is shorthand for all.x = L and all.y = L, where L
+#'  is either TRUE or FALSE.
+#' @param all.x logical; if TRUE, then extra rows will be added to the output, 
+#' one for each row in x that has no matching row in y. These rows will have NAs
+#'  in those columns that are usually filled with values from y. The default is
+#'  FALSE, so that only rows with data from both x and y are included in the output.
 #' @param all.y logical; analogous to all.x.
 #' @param sort logical. Should the result be sorted on the by columns?
-#' @param suffixes    a character vector of length 2 specifying the suffixes to be used for making unique the names of columns in the result which not used for merging (appearing in by etc).
+#' @param suffixes    a character vector of length 2 specifying the suffixes to
+#'  be used for making unique the names of columns in the result which not used 
+#'  for merging (appearing in by etc).
 #' @param incomparables	values which cannot be matched. See \code{\link{match}}.
 #'
 #'
 #' @seealso \code{\link{duplicated}}, \code{\link{merge}}
 #'
 #' @export
-
-dMerge <- function(data1, data2, Var, dropDups = TRUE, dupsOut = FALSE, fromLast = FALSE, all = FALSE, all.x = all, all.y = all,
+#####################################################################
+dMerge <- function(data1, data2, Var, dropDups = TRUE, dupsOut = FALSE, 
+                   fromLast = FALSE, all = FALSE, all.x = all, all.y = all,
                    sort = TRUE, suffixes = c(".x",".y"),
-                   incomparables = NULL){
+                   incomparables = NULL)
+    {
     if (isTRUE(dropDups) & isTRUE(dupsOut)){
         message("dropDups ignored")
         dropDups = FALSE
@@ -216,6 +247,8 @@ dMerge <- function(data1, data2, Var, dropDups = TRUE, dupsOut = FALSE, fromLast
     return(Comb)
 }
 
+
+###########################################################################
 #' Inserts a new row into a data frame
 #' @param data a data frame to insert the new row into.
 #' @param NewRow a vector whose length is the same as the number of columns in
@@ -238,8 +271,9 @@ dMerge <- function(data1, data2, Var, dropDups = TRUE, dupsOut = FALSE, fromLast
 #' @source The function largely implements:
 #' \url{http://stackoverflow.com/a/11562428}
 #' @export
-
-InsertRow <- function(data, NewRow, RowNum = NULL) {
+####################################################################
+InsertRow <- function(data, NewRow, RowNum = NULL)
+    {
     if (ncol(data) != length(NewRow)){
         stop('NewRow must be the same lenght as the number of columns in data.\n',
              call. = FALSE)
@@ -253,3 +287,64 @@ InsertRow <- function(data, NewRow, RowNum = NULL) {
     }
     return(data)
 }
+
+
+######################################################################
+#' Drop rows from a data frame with missing values on a given variable(s).
+#'
+#' \code{DropNA} drops rows from a data frame when they have missing (\code{NA})
+#' values on a given variable(s).
+#'
+#' @param data a data frame object.
+#' @param Var a character vector naming the variables you would like to have
+#' only non-missing (NA) values.
+#' @param message logical. Whether or not to give you a message about the number
+#' of rows that are dropped.
+#'
+#' @examples
+#' # Create data frame
+#' a <- c(1, 2, 3, 4, NA)
+#' b <- c( 1, NA, 3, 4, 5)
+#' ABData <- data.frame(a, b)
+#'
+#' # Remove missing values from column a
+#' ASubData <- DropNA(ABData, Var = "a", message = FALSE)
+#'
+#' # Remove missing values in columns a and b
+#' ABSubData <- DropNA(ABData, Var = c("a", "b"))
+#'
+#' @source Partially based on Stack Overflow answer written by donshikin:
+#' \url{http://stackoverflow.com/questions/4862178/remove-rows-with-nas-in-data-frame}
+#'
+#' @export
+#######################################################################
+DropNA <- function(data, Var, message = TRUE)
+    {
+    # Find term number
+    DataNames <- names(data)
+    TestExist <- Var %in% DataNames
+    if (!all(TestExist)){
+        stop("Variable(s) not found in the data frame.", call. = FALSE)
+    }
+    
+    # Drop if NA
+    if (length(Var) == 1){
+        DataNoNA <- data[!is.na(data[, Var]), ]
+        
+        DataVar <- data[, Var]
+        DataNA <- DataVar[is.na(DataVar)]
+        TotalDropped <- length(DataNA)
+    }
+    else{
+        RowNA <- apply(data[, Var], 1, function(x){any(is.na(x))})
+        DataNoNA <- data[!RowNA, ]
+        
+        TotalDropped <- sum(RowNA)
+    }    
+    
+    if (isTRUE(message)){
+        message(paste(TotalDropped, "rows dropped from the data frame." ))
+    }
+    return(DataNoNA)
+}
+
