@@ -16,11 +16,20 @@
 \usepackage{booktabs} % better looking tables
 \usepackage{enumitem} % powerfull for enumeration
 
+%%%%%%%%%%  CODEBOOK HOW-TO %%%%%%%%%%%
+%https://github.com/jtleek/datasharing
+% shakk contains:
+% Information about the variables (including units!) in the data set not 
+% contained in the tidy data
+% Information about the summary choices you made
+% Information about the experimental study design you used
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
 %%%%%%%%% TITLE %%%%%%%%%%%%%
 
-\newcommand*{\titleGP}{\begingroup % Create the command for including the title page in the document
+\newcommand*{\titleGP}{\begingroup % Create the command for including the title 
+%page in the document
 \centering % Center all text
 \vspace*{\baselineskip} % White space at the top of the page
 {\begingroup
@@ -107,11 +116,14 @@
 \def \tt {TTH}
 
 %commands%
-\newcommand{\Rlogo}{\protect\includegraphics[height=2ex,keepaspectratio]{Rlogo.pdf}}
+\newcommand{\Rlogo}{\protect\includegraphics[height=2ex,keepaspectratio]
+{Rlogo.pdf}}
 
-\newcommand{\julia}{\protect\includegraphics[height=2.5ex,keepaspectratio]{julia3.pdf}}
+\newcommand{\julia}{\protect\includegraphics[height=2.5ex,keepaspectratio]
+{julia3.pdf}}
 
-\newcommand{\knitr}{\protect\includegraphics[height=2.2ex,keepaspectratio]{knitr2.pdf}}
+\newcommand{\knitr}{\protect\includegraphics[height=2.2ex,keepaspectratio]
+{knitr2.pdf}}
 
 \newcommand{\project} {\emph{TheTradingHall.com}}
 \newcommand{\proj} {\emph{TTH}}
@@ -172,10 +184,10 @@ age bracket of 19-48 years. Each person performed six activities:
 They all were wearing a smartphone Samsung Galaxy S II on the waist.
 
 Using its embedded accelerometer and gyroscope, we captured 3-axial linear 
-acceleration and 3-axial angular velocity at a constant rate of 50Hz. The experiments
-have been video-recorded to label the data manually. The obtained dataset 
-has been randomly partitioned into two sets, where 70\% of the volunteers
-was selected for generating the training data and 30\% the test data. 
+acceleration and 3-axial angular velocity at a constant rate of 50Hz. The 
+experiments have been video-recorded to label the data manually. The obtained 
+dataset  has been randomly partitioned into two sets, where 70\% of the 
+volunteers was selected for generating the training data and 30\% the test data. 
 
 
 \subsection{Test records}
@@ -245,7 +257,7 @@ angle(): Angle between to vectors.
 \end{itemize}
 
 \section{\texorpdfstring{\color{mydarkgreen}{Coding guideline}}{}}
-The whole script has been split in five scripts for practicale reasons. Each one
+The whole script has been split in subscripts for practicale reasons. Each one
 is processed in sequencial order and dedicated to one specific task.
 \begin{itemize}
 
@@ -271,9 +283,12 @@ Code is in \MyHref{myblue}
 \href{https://github.com/gabx/accelerometers/blob/master/munge/25-cache.dataSet.R}
 {\mycode{25-cache.dataSet.R}} script.
 %%%
-\itbox Writing the tidy data set in \textit{.csv} files and this \textit{codeBook.pdf}.
-The current document use all \MyHref{myblue}\href{http://latex-project.org/intro.html}
-{\LaTeX} high quality text processor facilities.
+\itbox Writing the tidy data set in \textit{.csv} files and this 
+\textit{codeBook.pdf}. The current document use all \MyHref{myblue}
+\href{http://latex-project.org/intro.html}{\LaTeX} high quality text processor 
+facilities.
+
+
 
 Code is in \MyHref{myblue}
 \href{https://github.com/gabx/accelerometers/blob/master/munge/30-write.dataSet.R}
